@@ -2,15 +2,6 @@
 //11.09.2022
 
 #include "wordpuzzle.h"
-//Checks to see if two arrays are equal
-bool areEqual(char arr1[], char arr2[], int size){
-	for(int i=0; i < size; i++){
-		if(arr1[i] != arr2[i])
-			return false;
-	}
-	return true;
-}
-
 
 int main(){
 

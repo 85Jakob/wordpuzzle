@@ -8,6 +8,7 @@
 #include <vector>
 #include <algorithm>
 #include "wordPuzzlePrinter.h"
+#include "areEqual.h"
 
 using std::cout;
 using std::cin;
