@@ -1,12 +1,7 @@
 //By Jacob Doney
 //11.09.2022
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-using namespace std;
-
+#include "wordpuzzle.h"
 //Checks to see if two arrays are equal
 bool areEqual(char arr1[], char arr2[], int size){
 	for(int i=0; i < size; i++){
@@ -24,13 +19,10 @@ int main(){
 	char hiddenWord[WORDLEN] = {'b', 'e', 'a', 'n', 's'};
 	bool allCorrect = false;
 	int i = 1;
-	vector<char> badLetters;
+	std::vector<char> badLetters;
 
 	// Instructions
-	cout << "Try to guess a five letter word." << endl;
-	cout << "An uppercase letter means the letter is in the word and in the correct spot." << endl;
-	cout << "A lowercase letter means the letter is in the word but in the wrong spot." << endl;
-	cout << "Good luck!" << endl << endl;
+	printInstructions();
 
 	while( allCorrect == false ){
 		cout << "Guess " << i <<": _____\b\b\b\b\b";
@@ -62,7 +54,7 @@ int main(){
 					cout << "_";
 					// Will add incorrect letters to vector. Check to see if letter is already in vector
 					// and does not add if found.
-					if(find(badLetters.begin(), badLetters.end(), guessedWord[k]) == badLetters.end()){
+					if(std::find(badLetters.begin(), badLetters.end(), guessedWord[k]) == badLetters.end()){
 						badLetters.push_back(guessedWord[k]);
 					}
 				}
@@ -72,13 +64,8 @@ int main(){
 		// Checks to see if arrays match
 		allCorrect = areEqual(guessedWord, hiddenWord, WORDLEN);
 		if( allCorrect == true){
-			cout << " __     ______  _    _  __          _______ _   _   _" << endl;
-			cout << " \\ \\   / / __ \\| |  | | \\ \\        / /_   _| \\ | | | |" << endl;
-			cout << "  \\ \\_/ / |  | | |  | |  \\ \\  /\\  / /  | | |  \\| | | |" << endl;
-			cout << "   \\   /| |  | | |  | |   \\ \\/  \\/ /   | | | . ` | | |" << endl;
-			cout << "    | | | |__| | |__| |    \\  /\\  /   _| |_| |\\  | |_|" << endl;
-			cout << "    |_|  \\____/ \\____/      \\/  \\/   |_____|_| \\_| (_)" << endl << endl << endl;
-		}
+            printWinner();
+        }
 		// If not a match display list of letters not in array
 		else{
 			cout << "Not in word: ";
