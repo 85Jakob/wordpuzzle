@@ -7,9 +7,13 @@ int main(){
 
 	int const WORDLEN = 5;
 	char guessedWord[WORDLEN];
-	char hiddenWord[WORDLEN] = {'b', 'e', 'a', 'n', 's'};
+	char myword[WORDLEN];
+	
+	hiddenWord(myword);
+
 	bool allCorrect = false;
 	int i = 1;
+
 	std::vector<char> badLetters;
 
 	// Instructions
@@ -26,15 +30,15 @@ int main(){
         //
 		for (int k = 0; k < WORDLEN; k++){
             // checks for match in same spot
-			if(guessedWord[k] == hiddenWord[k]){
-				char correct = toupper(hiddenWord[k]);
+			if(guessedWord[k] == myword[k]){
+				char correct = toupper(myword[k]);
 				cout << correct;
 			}
 			else{
 				bool match = false;
 				// checks to see if there is a match
 				for (int p = 0; p < WORDLEN; p++){
-					if(guessedWord[k] == hiddenWord[p])
+					if(guessedWord[k] == myword[p])
 						match = true;
 				}
 				// if match returns lowercase letter
@@ -53,7 +57,7 @@ int main(){
 		}
 		cout << endl;
 		// Checks to see if arrays match
-		allCorrect = areEqual(guessedWord, hiddenWord, WORDLEN);
+		allCorrect = areEqual(guessedWord, myword, WORDLEN);
 		if( allCorrect == true){
             printWinner();
         }

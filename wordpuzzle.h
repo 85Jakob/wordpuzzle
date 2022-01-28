@@ -9,6 +9,7 @@
 #include <algorithm>
 #include "wordPuzzlePrinter.h"
 #include "areEqual.h"
+#include "hiddenword.h"
 
 using std::cout;
 using std::cin;
