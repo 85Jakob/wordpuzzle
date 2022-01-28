@@ -6,7 +6,7 @@
 int randomNum(void)
 {
     
-    int max = 11;
+    int max = 21;
     int num;
     srand(time(0));
  
@@ -18,8 +18,10 @@ int randomNum(void)
 
 void hiddenWord(char *hword)
 {
+    const int WORDCOUNT = 20;
+    const int WORDLEN = 5;
     int num = randomNum();
-    char word[10][5] =
+    char word[WORDCOUNT][WORDLEN] =
     {
 	{'h','e','l','l','o'}, //1
 	{'t','a','c','o','s'}, //2
@@ -30,7 +32,17 @@ void hiddenWord(char *hword)
 	{'p','h','o','n','e'}, //7
 	{'f','l','o','u','r'}, //8
 	{'f','i','r','s','t'}, //9
-	{'s','t','o','r','e'} //10
+	{'s','t','o','r','e'}, //10
+    {'s','t','a','r','t'}, //11
+    {'p','e','r','k','y'}, //12
+    {'v','i','d','e','o'}, //13
+    {'s','t','a','n','d'}, //14
+    {'f','r','o','s','t'}, //15
+    {'s','u','p','e','r'}, //16
+    {'p','o','u','n','d'}, //17
+    {'w','r','i','t','e'}, //18
+    {'b','r','a','v','o'}, //19
+    {'p','a','r','t','y'} //20
     };
 	
     for(int i = 0; i < 5; i++){
