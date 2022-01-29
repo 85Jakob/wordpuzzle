@@ -2,6 +2,7 @@
 //11.09.2022
 
 #include "wordpuzzle.h"
+#include <string>
 
 int main(){
 
@@ -31,7 +32,9 @@ int main(){
                 // checks for match in same spot
 			    if(guessedWord[k] == myword[k]){
 				    char correct = toupper(myword[k]);
-				    cout << correct;
+                    printf("\033[1;30;42m");
+                    cout << correct;
+                    printf("\033[0m");
 			    }
 			    else{
 				    bool match = false;
@@ -42,7 +45,10 @@ int main(){
 				    }
 				    // if match returns lowercase letter
 				    if( match ){
-					    cout << guessedWord[k];
+                        char missed = toupper(guessedWord[k]);
+                        printf("\033[1;30;43m");
+					    cout << missed;
+                        printf("\033[0m");
 				    }
 				    else{
 					    cout << "_";
@@ -67,8 +73,11 @@ int main(){
 		    // If not a match display list of letters not in array
 		    else{
 			    cout << "Not in word: ";
-                for(auto x = badLetters.begin(); x != badLetters.end(); ++x)
+                for(auto x = badLetters.begin(); x != badLetters.end(); ++x){
+                    printf("\033[1;31m");
                     cout << *x << " ";
+                    printf("\033[0m");
+                }
                 cout << endl;
                 guessCount++;
 		    }
