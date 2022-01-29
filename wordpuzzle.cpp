@@ -1,4 +1,5 @@
 //By Jacob Doney
+//Main file contains the actual play loop.
 //11.09.2022
 
 #include "wordpuzzle.h"
