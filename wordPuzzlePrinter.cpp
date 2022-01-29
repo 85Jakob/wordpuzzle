@@ -5,8 +5,8 @@
 
 void printInstructions(){
     std::cout << "Try to guess a five letter word.\n";
-    std::cout << "An uppercase letter means the letter is in the word and in the correct spot.\n";
-    std::cout << "A lowercase letter means the letter is in the word but in the wrong spot.\n";
+    std::cout << "A green letter means the letter is in the word and in the correct spot.\n";
+    std::cout << "A yellow letter means the letter is in the word but in the wrong spot.\n";
 }
 
 void printWinner(){
