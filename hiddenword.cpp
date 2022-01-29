@@ -6,7 +6,7 @@
 int randomNum(void)
 {
     
-    int max = 21;
+    int max = 20;
     int num;
     srand(time(0));
  
