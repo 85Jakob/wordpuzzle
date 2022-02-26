@@ -6,11 +6,10 @@
 int randomNum(void)
 {
     
-    int max = 20;
     int num;
     srand(time(0));
  
-    num = rand() %max;
+    num = rand() %MAX;
  
     return num;
 }
@@ -18,8 +17,6 @@ int randomNum(void)
 
 void hiddenWord(char *hword)
 {
-    const int WORDCOUNT = 20;
-    const int WORDLEN = 5;
     int num = randomNum();
     char word[WORDCOUNT][WORDLEN] =
     {

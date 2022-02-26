@@ -4,6 +4,6 @@
 #ifndef EQUAL_H
 #define EQUAL_H
 
-bool areEqual(char arr[], char arr2[], int size);
+bool areEqual(char*, char*, int size);
 
 #endif //EQUAL_H

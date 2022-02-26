@@ -7,7 +7,6 @@
 
 int main(){
 
-	int const WORDLEN = 5;
     char play;
     printInstructions();
 
