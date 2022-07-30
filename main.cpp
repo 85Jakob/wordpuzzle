@@ -11,22 +11,22 @@ int main(){
     printInstructions();
 
     do{
-	    char guessedWord[WORDLEN];
-	    char myword[WORDLEN];
-	    hiddenWord(myword);
+		char guessedWord[WORDLEN];
+		char myword[WORDLEN];
+		hiddenWord(myword);
         bool allCorrect = false;
-	    int guessCount = 1;
+		int guessCount = 1;
 
-	    std::vector<char> badLetters;
+		std::vector<char> badLetters;
 
-	    while(allCorrect == false){
-		    cout << "Guess " << guessCount <<": _____\b\b\b\b\b";
+		while(allCorrect == false){
+			cout << "Guess " << guessCount <<": _____\b\b\b\b\b";
 		    // Takes users input.
 		    for (int j = 0; j < WORDLEN; j++){
                 char tempChar;
 			    cin >> tempChar;
 			    guessedWord[j] = tolower(tempChar);
-			    }
+			}
             //
 		    for (int k = 0; k < WORDLEN; k++){
                 // checks for match in same spot
@@ -83,7 +83,7 @@ int main(){
 		    }
 	    }
     }while(play=='y');
-
+	
 	return 0;
 }
 
