@@ -2,16 +2,43 @@
 //Main file contains the actual play loop.
 //11.09.2022
 
-#include "main.h"
+#include <iostream>
+#include <vector>
+#include <algorithm>
 #include <string>
+#include "hiddenword.h"
+#include <stdio.h>
+#include <string>
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+void printInstructions(){
+    std::cout << "Try to guess a five letter word.\n";
+    std::cout << "A green letter means the letter is in the word and in the correct spot.\n";
+    std::cout << "A yellow letter means the letter is in the word but in the wrong spot.\n";
+}
+
+void printWinner(){
+    std::cout << " __     ______  _    _  __          _______ _   _   _\n";
+	std::cout << " \\ \\   / / __ \\| |  | | \\ \\        / /_   _| \\ | | | |\n";
+	std::cout << "  \\ \\_/ / |  | | |  | |  \\ \\  /\\  / /  | | |  \\| | | |\n";
+	std::cout << "   \\   /| |  | | |  | |   \\ \\/  \\/ /   | | | . ` | | |\n";
+	std::cout << "    | | | |__| | |__| |    \\  /\\  /   _| |_| |\\  | |_|\n";
+	std::cout << "    |_|  \\____/ \\____/      \\/  \\/   |_____|_| \\_| (_)\n\n\n";
+    
+}
 
 int main(){
 	char play;
+	const int WORDLEN = 5;
 	printInstructions();
 	do{
 		char guessedWord[WORDLEN];
-		char myword[WORDLEN];
-		hiddenWord(myword);
+		
+		RandomWordGenerator wordGen;
+		std::string myword = wordGen.getHiddenWord();
 		bool allCorrect = false;
 		int guessCount = 1;
 		std::vector<char> badLetters;
@@ -58,7 +85,7 @@ int main(){
 			}
 			cout << endl;
 			// Checks to see if arrays match
-			allCorrect = areEqual(guessedWord, myword, WORDLEN);
+			allCorrect = myword == guessedWord;
 			if( allCorrect == true){
 				printWinner();
 				cout << "Do you want to play again? (y/n)\n>>";
